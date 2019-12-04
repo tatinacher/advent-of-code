@@ -1,4 +1,5 @@
-const runIntcodeProgram = array => {
+const runIntcodeProgram = mass => {
+  const array = mass.slice();
   let step = 0,
     x,
     y,
@@ -37,8 +38,15 @@ async function loadMonoCounter() {
 
 loadMonoCounter().then(res => {
   let array = res.split(",").map(Number);
-  array[1] = 12;
-  array[2] = 2;
-  const newArray = runIntcodeProgram(array);
-  console.log(newArray);
+
+  for (let i = 0; i < 100; i++) {
+    for (let j = 0; j < 100; j++) {
+      array[1] = i;
+      array[2] = j;
+      const newArray = runIntcodeProgram(array);
+      if (newArray[0] == 19690720) {
+        console.log(i * 100 + j);
+      }
+    }
+  }
 });
