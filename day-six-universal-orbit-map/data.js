@@ -1,4 +1,4 @@
-const data = [
+export const data = [
   "WR4)TZN",
   "M6J)Q1N",
   "D5B)2KR",
@@ -1151,70 +1151,3 @@ const data = [
   "PGK)W8Z",
   "SC9)KN2"
 ];
-
-function findAllWays(data) {
-  const way = [];
-  const newArray = [];
-  data.forEach(orbit => {
-    planets = orbit.split(")");
-    newArray.push([planets[0], planets[1]]);
-    way.push([planets[1], [planets[0]]]);
-  });
-
-  // way[planet, [p1, p2, ... , pn]]
-  way.forEach(planet => {
-    const length = newArray.length;
-    let index = 0;
-    while (index < length) {
-      // compare last planet of chain with central planet
-      if (planet[1][planet[1].length - 1] == newArray[index][1]) {
-        planet[1].push(newArray[index][0]);
-        index = 0;
-      } else {
-        index += 1;
-      }
-    }
-  });
-  return way;
-}
-
-function countNumberOfOrbits(data) {
-  const ways = findAllWays(data);
-  let count = 0;
-  ways.forEach(planet => {
-    count += planet[1].length;
-  });
-  return count;
-}
-
-function getIntersectionPoints(A, B) {
-  return A.filter(value => B.includes(value));
-}
-
-function countWay(data) {
-  const ways = findAllWays(data);
-  let YOU = [];
-  let SAN = [];
-  ways.forEach(way => {
-    if (way[0] == "YOU") {
-      YOU = way;
-    }
-    if (way[0] == "SAN") {
-      SAN = way;
-    }
-  });
-  const intersectionPlanets = getIntersectionPoints(YOU[1], SAN[1]);
-  let min = YOU[1].length + SAN[1].length;
-  intersectionPlanets.forEach(planet => {
-    const countYOU = YOU[1].indexOf(planet);
-    const countSAN = SAN[1].indexOf(planet);
-    if (countYOU + countSAN < min) {
-      min = countYOU + countSAN;
-    }
-  });
-  return min;
-}
-
-const direction = countWay(data);
-
-console.log(direction);
