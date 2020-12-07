@@ -1,8 +1,6 @@
 fs = require("fs");
 
 const calc = (array, index, start, end) => {
-  //   console.log(array, array[index], start, end);
-
   if (end - start <= 1) {
     return array[index] === "F" || array[index] === "L" ? start : end;
   }
