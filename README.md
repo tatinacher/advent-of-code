@@ -1,16 +1,15 @@
-# advent-of-code
+# :christmas_tree: Advent of code :christmas_tree:
 
 The main goal is to beat this dog -> https://github.com/deniskrumko
 
-# advent-of-code-2020
+### Year 2020 - 13 stars
 
-# :christmas_tree: Advent of code 2019 :christmas_tree:
+:star::star::star::star::star::star::star::star::star::star::star::star::star:
 
-https://adventofcode.com/2019/
+### Year 2019 - 12 stars
 
-- Day 1 :star::star:
-- Day 2 :star::star:
-- Day 3 :star::star:
-- Day 4 :star::star:
-- Day 5 :star::star:
-- Day 6 :star::star:
+:star::star::star::star::star::star::star::star::star::star::star::star:
+
+### Year 2017 - 2 stars
+
+:star::star:
