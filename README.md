@@ -2,6 +2,10 @@
 
 The main goal is to beat this dog -> https://github.com/deniskrumko
 
+### Year 2021 - 2 stars
+
+:star::star:
+
 ### Year 2020 - 13 stars
 
 :star::star::star::star::star::star::star::star::star::star::star::star::star:
