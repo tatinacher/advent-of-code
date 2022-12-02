@@ -29,10 +29,10 @@ const neededRes = {
 };
 
 const secondRound = (round) => {
-  const res = round.reduce((acc, game) => {
-    console.log(game[1], neededRes[game[1]](game[0]));
-    return acc + getRes([game[0], neededRes[game[1]](game[0])]);
-  }, 0);
+  const res = round.reduce(
+    (acc, game) => acc + getRes([game[0], neededRes[game[1]](game[0])]),
+    0
+  );
   return res;
 };
 
